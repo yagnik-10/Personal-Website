@@ -1,6 +1,0 @@
-{
-  "editor.wordWrap": "on",
-  "search.exclude": {
-    "site/archive/v*/**": true
-  },
-}
