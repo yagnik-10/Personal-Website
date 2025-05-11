@@ -1,0 +1,12 @@
+/node_modules
+yarn-error.log
+
+/s
+/notes
+/overrides
+
+wrangler.toml
+/.wrangler
+
+/update
+/update-archive-worktree

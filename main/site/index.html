@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="canonical" href="/index.html">
+<link rel="stylesheet" href="/common.css" />
+<script defer src="/common.js"></script>
+
+<title>yagnikpavagadhi.com</title>
+
+<site-header prehide></site-header>
+
+<section class="header">
+  <div class="header-content">
+    <div class="header-circle title-font">
+      <nebula-animation
+        class="nebula"
+        palette="#e79907 #bf1852 #4d4aff #0ad591"
+        mouse
+      ></nebula-animation>
+      <div class="header-circle-text header-circle-text-big">
+        <script>
+          function renderCircleText(radiusVh, angleStepDeg, text) {
+            let htmlString = "";
+            let angle = angleStepDeg * -((text.length - 1) / 2);
+            for (const char of text) {
+              htmlString += `<span class="header-circle-text-char" style="transform: translateX(calc(${radiusVh}vh - 0.5ch)) rotate(${angle}deg); transform-origin: 0.5ch ${radiusVh}vh">${char}</span>`;
+              angle += angleStepDeg;
+            }
+            document.currentScript.parentElement.innerHTML = htmlString;
+          }
+          renderCircleText(18, 7.5, "Welcome to my personal website!");
+        </script>
+      </div>
+      <div class="header-circle-text header-circle-text-small">
+        <script>
+          renderCircleText(13, 9, "Welcome to my site!");
+        </script>
+      </div>
+      <img class="home-circle-icon pixelated" src="/icons/yay_sheet.png" alt="" width="96" height="16" loading="eager" />
+    </div>
+
+    <span class="intro-text">
+      <div class="intro-spacer"></div>
+      <span class="intro-line">
+        <noscript>Hello!</noscript>
+        <script>
+          const greetings = [
+            "Hey there →",
+            "こんにちは",
+            "¡Hola!",
+            "नमस्ते",
+            "print('Hello!')",
+            "console.log('Hello!')",
+            "System.out.println('Hello!')",
+            "cout << 'Hello!'"
+          ];
+          let currentIndex = 0;
+          const element = document.currentScript.parentElement;
+          element.classList.add('typing');
+          
+          async function typeText(text) {
+            let currentText = "";
+            // Type forward
+            for (let i = 0; i <= text.length; i++) {
+              currentText = text.substring(0, i);
+              element.textContent = currentText || "\u00A0";
+              await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            // Pause at the end
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Backspace
+            for (let i = text.length; i >= 0; i--) {
+              currentText = text.substring(0, i);
+              element.textContent = currentText || "\u00A0";
+              await new Promise(resolve => setTimeout(resolve, 50));
+            }
+          }
+          
+          async function updateGreeting() {
+            while (true) {
+              await typeText(greetings[currentIndex]);
+              currentIndex = (currentIndex + 1) % greetings.length;
+              await new Promise(resolve => setTimeout(resolve, 500));
+            }
+          }
+          
+          updateGreeting();
+        </script>
+      </span>
+      <br />
+      <span class="intro-line">
+        I'm Yagnik
+        <a class="ipa" href="https://ipa-reader.xyz/?text=y+ah+g+nih+k"
+          >/<span class="ipa-text">y ah g - n ih k</span>/<span class="ipa-icon"
+            >🔊</span
+          ></a
+        >,
+      </span>
+      <br />
+      <span class="intro-line"> software engineer </span>
+      <br />
+      <span class="intro-line">
+        who likes playing soccer,
+      </span>
+      <br />
+      <span class="intro-line">
+        esports, making stuff,
+      </span>
+      <br />
+      <span class="intro-line">
+        and coding.
+      </span>
+      <br />
+      <br />
+      <span class="intro-line"> Nice to meet you. </span>
+      <br />
+      <span class="intro-line">
+        Please,
+        <span class="great-time-trigger" onclick="haveAGreatTime(event)"
+          >have a great time.</span
+        >
+      </span>
+    </span>
+  </div>
+</section>
+
+<style>
+  section.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(75vh, 600px, 100vh);
+  }
+  @media (prefers-reduced-motion) {
+    section.header * {
+      animation: none !important;
+    }
+  }
+
+  .header-content {
+    white-space: nowrap;
+    height: 40vh;
+    min-width: 80vh;
+    overflow: hidden;
+  }
+
+  .header-circle {
+    position: relative;
+    display: block;
+    float: left;
+    width: 40vh;
+    height: 40vh;
+    box-sizing: content-box;
+    margin: 0vh 2vh;
+    border-radius: 50%;
+    background: #bf1852;
+    shape-outside: circle(calc(50% + 1vh));
+    text-align: initial;
+    overflow: hidden;
+    animation: header-circle-reveal 0.5s cubic-bezier(1, 0, 0.9, 1),
+      fade-background-in 0.2s;
+  }
+  @keyframes header-circle-reveal {
+    from {
+      clip-path: circle(2.5vh);
+    }
+    to {
+      clip-path: circle(50%);
+    }
+  }
+  @keyframes fade-background-in {
+    from {
+      background: transparent;
+    }
+  }
+
+  .header-circle-text {
+    position: relative;
+    margin: 2vh;
+    width: 100%;
+    height: 100%;
+    font-size: 3vh;
+    color: #fff;
+    animation: home-circle-text-animation 7s
+      cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  .header-circle:activew .header-circle-text {
+    animation-play-state: paused;
+  }
+
+  @keyframes home-circle-text-animation {
+    to {
+      transform: rotate(-1turn);
+    }
+  }
+
+  .nebula {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header-circle-text-big {
+    width: 36vh;
+    height: 36vh;
+  }
+  .header-circle-text-small {
+    display: none;
+  }
+  .header-circle-text-char {
+    display: inline-block;
+    width: 0;
+    clip-path: inset(0.8ex -1ch 0);
+    color: transparent;
+    text-shadow: 0 0 0 #fff, 0 4vh 0 #fff;
+    transition: text-shadow 0.4s 0.4s cubic-bezier(0, 0, 0.2, 1);
+    @starting-style {
+      text-shadow: 0 4vh 0 #fff, 0 4vh 0 #fff;
+    }
+  }
+
+  .home-circle-icon {
+    position: absolute;
+    left: calc(50% - 2.5vh);
+    top: calc(50% - 2.5vh);
+    width: 5vh;
+    height: 5vh;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+
+  .header-circle:hover .header-circle-text-char {
+    text-shadow: 0 -4vh 0 #fff, 0 0 0 #fff;
+    transition-delay: 0s;
+    transition-timing-function: var(--ease);
+  }
+  .header-circle:hover .home-circle-icon {
+    object-position: 20% 0;
+  }
+
+  .intro-text {
+    line-height: 1.8;
+    font-size: 2.2vh;
+    font-style: italic;
+    animation: intro-text 0.8s 0.4s cubic-bezier(0, 0.7, 0.4, 1) backwards;
+  }
+  @keyframes intro-text {
+    from {
+      line-height: 8;
+    }
+  }
+
+  .intro-line {
+    min-height: 1.8em;  /* Match line-height */
+    display: inline-block;
+    animation: intro-text-drift 1.6s cubic-bezier(0, 0.8, 0.2, 1) both;
+    font: inherit;
+  }
+  .intro-line a,
+  .intro-line a:visited {
+    color: inherit;
+  }
+  @keyframes intro-text-drift {
+    from {
+      transform: translate(-1em, 4em);
+      text-shadow: 0 3em 0 var(--clr0), 0 6em 0 var(--clr1);
+    }
+    to {
+      transform: translate(0, 0);
+      text-shadow: 0 0 0 var(--clr0), 0 0 0 var(--clr1);
+    }
+  }
+
+  .intro-spacer {
+    display: block;
+    height: 0px;
+    animation: intro-spacer 0.4s 0.4s cubic-bezier(0, 0.8, 0.1, 1) backwards;
+  }
+  @keyframes intro-spacer {
+    from {
+      height: 100%;
+    }
+  }
+
+  .ipa {
+    font-size: 85%;
+    font-style: normal;
+    text-decoration: none;
+    color: inherit;
+  }
+  .ipa-text {
+    text-decoration: underline;
+  }
+  .ipa-icon {
+    display: inline-block;
+    transform: scale(0.6);
+    filter: brightness(8);
+  }
+
+  @media (max-aspect-ratio: 4/5) {
+    .header {
+      height: auto;
+      min-height: 80vh;
+      margin: 30px 0 60px;
+    }
+    .header-content {
+      height: auto;
+      min-width: unset;
+      text-align: center;
+    }
+    .header-circle {
+      display: inline-block;
+      float: none;
+      width: 30vh;
+      height: 30vh;
+    }
+    .header-circle-text-big {
+      display: none;
+    }
+    .header-circle-text-small {
+      display: block;
+      width: 26vh;
+      height: 26vh;
+    }
+    .intro-text {
+      display: block;
+      margin-top: 4vh;
+      font-size: 16px;
+      animation: intro-text-mobile 1s cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    }
+    .intro-spacer {
+      animation: none;
+    }
+  }
+  @keyframes intro-text-mobile {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .great-time-trigger {
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+  }
+  .great-time-counter {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 15px;
+    background-color: var(--bg-clr);
+    pointer-events: none;
+    transform-origin: bottom right;
+    animation: great-time-counter-appear 0.6s both;
+    z-index: 200;
+  }
+  .great-time-counter.flash {
+    background-color: #fff;
+  }
+
+  @keyframes great-time-counter-appear {
+    from {
+      opacity: 0;
+      transform: scale(4);
+    }
+  }
+
+  .section,
+  .lg-column-section {
+    margin: 150px auto;
+  }
+
+  .start-from-top .content-columns {
+    animation: section-appear 0.2s 1s backwards;
+  }
+  @keyframes section-appear {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .bento-section {
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    grid-auto-rows: 180px;
+    justify-items: center;
+    gap: 12px;
+    font-size: 120%;
+    font-weight: bold;
+    font-style: italic;
+  }
+  @media (max-width: 690px) {
+    .bento-section {
+      padding: 0 6px;
+      grid-template-columns: repeat(auto-fit, minmax(min(172px, 100%), 1fr));
+      gap: 6px;
+      font-size: 100%;
+    }
+  }
+  .bento-section > * {
+    display: block;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+  }
+  .bento-section card-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    overflow: hidden;
+    container-type: inline-size;
+  }
+  .bento-tall {
+    grid-row: span 2;
+  }
+  card-box.bento-map {
+    overflow: hidden;
+    position: relative;
+    justify-content: end;
+    text-align: center;
+  }
+  card-box.bento-map > map-flight {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  card-box.bento-map > map-flight[origin] img {
+    /* Tiny extra zoom to centre India pin perfectly */
+    transform: scale(1.5);
+    object-position: 50% 50%;
+  }
+  card-box.bento-map > map-flight[destination] img {
+    /* Revert to original zoom level */
+    transform: scale(1.1);
+    object-position: 50% 50%;
+  }
+  card-box.bento-map > span {
+    z-index: 1;
+    padding: 1em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  card-box[appearance=bento-image] {
+    position: relative;
+    padding: 0;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+    }
+    span {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      padding: 6px;
+      border-radius: 6px;
+      background: var(--bg-clr);
+    }
+  }
+
+  .content-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(480px, 50vw), 1fr));
+    gap: 90px 48px;
+    justify-items: center;
+  }
+  .content-columns section {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  lab-item {
+    position: relative;
+    width: 100%;
+    /* aspect ratio trick*/
+    padding-bottom: 100%;
+
+    a {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      text-decoration: none;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    img,
+    video {
+      position: absolute;
+      inset: 0;
+      /* we still need width/height */
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    & a:focus-visible img,
+    & a:focus-visible video,
+    &:hover img,
+    &:hover video {
+      filter: invert(1) contrast(0.6);
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      inset: 0;
+      padding: 24px 18px 0;
+      font-size: 15px;
+      font-style: italic;
+      font-weight: bold;
+      line-height: 1.6;
+      text-align: center;
+      visibility: hidden;
+      color: #fff;
+      z-index: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--clr0-dark);
+        opacity: 0.7;
+        z-index: -1;
+      }
+    }
+    & a:focus-visible span,
+    &:hover span {
+      visibility: visible;
+    }
+
+    /* require double tap to open on mobile */
+    @media (hover: none) {
+      a {
+        pointer-events: none;
+      }
+      /* :hover is a hack to select the last touched item */
+      &:hover {
+        a {
+          animation: disable-pointer-events 0.2s forwards;
+        }
+        span::after {
+          content: "↗";
+          position: absolute;
+          right: 18px;
+          top: 18px;
+          width: 18px;
+          height: 18px;
+          line-height: 16px;
+          font-family: var(--display-font);
+          font-size: 24px;
+          font-style: normal;
+          font-weight: bold;
+          background: #fff;
+          color: var(--clr0-dark);
+        }
+      }
+    }
+  }
+  @keyframes disable-pointer-events {
+    0%,
+    99% {
+      pointer-events: none;
+    }
+    100% {
+      pointer-events: all;
+    }
+  }
+
+  /* Update typing animation styles */
+  .typing {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    min-height: 1.8em;
+    min-width: 12ch;
+    vertical-align: bottom;
+  }
+
+  /* Update location block styles */
+  .location-block {
+    display: none;
+  }
+  .location-dot {
+    display: none;
+  }
+  .location-line {
+    display: none;
+  }
+
+  .origin .location-dot {
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  .destination .location-dot {
+    animation: dot-pulse 2s ease-in-out infinite 1s;
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
+  }
+
+  .bento-map {
+    /* background: #1a1a1a; - removing this line */
+  }
+
+  .map-container,
+  .map,
+  .country-outline,
+  .location-dot,
+  .plane-path {
+    display: none;
+  }
+
+  .india .country-outline,
+  .boston .country-outline {
+    display: none;
+  }
+
+  .map-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map {
+    width: 80%;
+    height: 80%;
+  }
+
+  .country-outline {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1.5;
+  }
+
+  .location-dot {
+    fill: #fff;
+    r: 2;
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  .plane-path {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    transform-origin: center;
+    animation: plane-path 4s ease-in-out infinite;
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+  }
+
+  @keyframes plane-path {
+    0% { transform: scaleX(0); opacity: 0; }
+    20% { transform: scaleX(1); opacity: 1; }
+    80% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(0); opacity: 0; }
+  }
+
+  .india .country-outline {
+    transform: scale(2) translate(20%, 10%);
+  }
+
+  .boston .country-outline {
+    transform: scale(1.2) translate(0, 10%);
+  }
+</style>
+
+<div class="great-time-counter">
+  you now have <span id="great-time-num">0</span> great time(s)
+</div>
+
+<div class="md-column-section content-columns">
+  <section style="grid-row-end: span 2">
+    <img class="pixelated lg-icon" src="/icons/pot.png" alt="" loading="lazy" width="16" height="16" />
+    <h2>Some things I've built</h2>
+    <fixed-grid>
+      <feature-card>
+        <a href="https://github.com/yagnik-10/nanokernel" target="_blank" rel="noopener">
+          <img src="/wares/wikawik/media/nanokernal.png" loading="lazy" width="1200" height="1200" style="--lqip:154330" />
+          <hgroup>
+            <h1>nanoKernal</h1>
+            <em>A lightweight operating system kernel</em>
+          </hgroup>
+          <p>
+            A lightweight operating system kernel showcasing core OS concepts. Implements memory allocation, process synchronization, and event systems. Built with modern C++ and CMake. Passion project exploring system-level programming.
+          </p>
+        </a>
+      </feature-card>
+
+      <feature-card>
+        <a href="https://github.com/yagnik-10/Distributed-Collaboration-Hub" target="_blank" rel="noopener">
+          <img src="/wares/dimensions/media/collab-hub.png" loading="lazy" width="800" height="800" style="--lqip:83676" />
+          <hgroup>
+            <h1>Distributed-Collaboration-Hub</h1>
+            <em>A full-stack microservices demo</em>
+          </hgroup>
+          <p>
+            A full-stack microservices demo for secure collaboration. Built with Python (FastAPI) and React. Features JWT authentication, role-based access, and a modern UI. Try user and admin flows, manage accounts and orders, and see real-time updates. Dockerized for easy local setup.
+          </p>
+        </a>
+      </feature-card>
+
+      <feature-card>
+        <a href="https://github.com/yagnik-10/ResumeFit" target="_blank" rel="noopener">
+          <img src="/wares/guhit-kudlit/resumefit.png" loading="lazy" width="1920" height="1080" style="--lqip:174819" />
+          <hgroup>
+            <h1>ResumeFit</h1>
+            <em>Tailor your resume for any job</em>
+          </hgroup>
+          <p>
+            A web app that helps you tailor your resume for any job. Instantly see your match rate, missing skills, and get actionable tips to improve your resume for specific job descriptions. Built with Flask and modern frontend tech. Uses a curated skills database for realistic feedback. Designed for job seekers who want to stand out.
+          </p>
+        </a>
+      </feature-card>
+    </fixed-grid>
+    <p class="center-text">
+      <a class="bold" href="/wares/">
+        More s/w projects<span class="inline-block no-text-decoration">→</span>
+      </a>
+    </p>
+  </section>
+  <section>
+    <img class="pixelated lg-icon" src="/icons/person.png" alt="" loading="lazy" width="16" height="16" />
+    <h2>About me</h2>
+    <p>My name is Yagnik Pavagadhi.</p>
+    <p>
+      My interests are programming, interactive things, algorithms, games and tech.
+    </p>
+    <p>
+      Currently working as a Graduate Teaching Assistant at Northeastern University.
+    </p>
+    <p>More <a href="/about/">about me</a>.</p>
+  </section>
+</div>
+
+<section class="section bento-section">
+  <a href="/wares/">
+    <card-box>
+      <img class="pixelated lg-icon" src="/icons/pot.png" alt="" loading="lazy" width="16" height="16" />
+      <span>projects</span>
+    </card-box>
+  </a>
+  <card-box class="bento-tall">
+    <div class="icon-and-text-line">
+      <img class="invert pixelated md-icon" src="/icons/github.png" alt="" loading="lazy" width="16" height="16" />
+      github<br />heatmap
+    </div>
+    <gh-contribs></gh-contribs>
+  </card-box>
+  <card-box class="bento-tall bento-map">
+    <map-flight bgsrc="/components/map-flight/india.png" origin></map-flight>
+    <span>i'm from India</span>
+  </card-box>
+  <a href="/music/">
+    <card-box>
+      <img class="pixelated lg-icon" src="/icons/sound.png" alt="" loading="lazy" width="16" height="16" />
+      my music
+    </card-box>
+  </a>
+  <card-box class="bento-tall bento-map">
+    <map-flight bgsrc="/components/map-flight/boston.png" destination></map-flight>
+    <span>i'm currently based in<br />Boston, USA</span>
+  </card-box>
+  <card-box>
+    <span class="right-now">
+      <right-now></right-now>
+    </span>
+  </card-box>
+  <card-box>
+    <div>hit counter</div>
+    <bump-tally data-rewrite="hits">123346</bump-tally>
+  </card-box>
+  <a href="/misc/">
+    <card-box>
+      <img class="pixelated lg-icon" src="/icons/person.png" alt="" loading="lazy" width="16" height="16" />
+      misc
+    </card-box>
+  </a>
+</section>
+
+<div class="center-text" style="margin: 2em">Thanks for visiting. Have a look around!</div>
+
+<site-footer nobg></site-footer>
+
+<script>
+  window.addEventListener("load", () => {
+    const yayIcon = document.querySelector(".home-circle-icon");
+    const greatTimeContainer = document.querySelector(".great-time-counter");
+    const greatTimeNum = document.getElementById("great-time-num");
+    document.body.classList.toggle("start-from-top", window.scrollY < 100);
+
+    let sayTime = 0;
+    const ipa = document.querySelector(".ipa");
+    ipa.addEventListener("click", (event) => {
+      event.preventDefault();
+      const sayName = new Audio("/yagnik.mp3");
+      sayName.addEventListener("canplaythrough", () => {
+        sayName.play();
+        sayTime = Date.now();
+        animateYay(sayName.duration);
+      });
+      sayName.addEventListener("ended", () => {
+        sayName.remove();
+      });
+    });
+
+    function animateYay(duration) {
+      const t = ((Date.now() - (sayTime + 400)) / (duration * 1000)) * 1.5;
+
+      if (t >= 1) {
+        yayIcon.style.objectPosition = null;
+      } else {
+        const frame = Math.floor(t * 3);
+        if (frame >= 0 && frame <= 2) {
+          yayIcon.style.objectPosition = 40 + (frame % 3) * 20 + "% 0";
+        } else if (frame > 2) {
+          yayIcon.style.objectPosition = "40% 0";
+        } else {
+          yayIcon.style.objectPosition = null;
+        }
+        requestAnimationFrame(() => animateYay(duration));
+      }
+    }
+
+    let greatTimes = 0;
+    window.haveAGreatTime = function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      greatTimes++;
+      greatTimeNum.innerText = greatTimes;
+      if (greatTimes === 1) {
+        greatTimeContainer.style.display = "block";
+      } else {
+        greatTimeContainer.classList.add("flash");
+        setTimeout(() => greatTimeContainer.classList.remove("flash"), 34);
+      }
+    };
+  });
+</script>

@@ -1,0 +1,602 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/common.css" />
+<script defer src="/common.js"></script>
+
+<title>Misc</title>
+
+<site-header iconsrc="/icons/person.png"></site-header>
+
+<content-header>
+  <h1>Misc stuff</h1>
+  <div>A place for things that don't have a place.</div>
+</content-header>
+
+<div class="grid">
+  <section class="section single-section">
+    <p>👤 You are visitor number</p>
+    <div class="full-width">
+      <bump-tally data-rewrite="hits">300</bump-tally>
+    </div>
+    <p>Thank you for visiting my website!</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Professional history</h2>
+    <p>
+      Here's a peek of my career so far:
+    </p>
+    <details class="details">
+      <summary class="summary summary-highlighted">Graduate Teaching Assistant at Northeastern University (present)</summary>
+      <p>
+        Teaching assistant for INFO 7375 (Prompt Engineering for Generative AI). Working with LLM fine-tuning, prompt design, and helping students explore the world of AI.
+      </p>
+    </details>
+    <details class="details">
+      <summary class="summary summary-highlighted">Software Engineer Intern at Maxgen Technologies</summary>
+      <p>
+        Built secure payment processing endpoints with Java/Spring Boot and optimized PostgreSQL databases. Worked in an Agile team to deliver efficient solutions.
+      </p>
+    </details>
+    <details class="details">
+      <summary class="summary summary-highlighted">Machine Learning Researcher at Suvidha Foundation</summary>
+      <p>
+        Developed a text recommendation system using PyTorch and Transformers. Optimized data processing with Spark clusters and implemented model logging systems.
+      </p>
+    </details>
+    <details class="details">
+      <summary class="summary summary-highlighted">Software Engineer Intern at Sparks To Ideas</summary>
+      <p>
+        Created microservices with Node.js/Express and built React/Redux frontends. Implemented secure authentication and data management systems.
+      </p>
+    </details>
+    <details class="details">
+      <summary class="summary summary-highlighted">Web Development Intern at Global-Galaxy</summary>
+      <p>
+        Enhanced web performance through modern JavaScript practices and React.js implementations. Focused on responsive design and optimization techniques.
+      </p>
+    </details>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <p>🎓 My academic journey:</p>
+    <details class="details">
+      <summary class="summary summary-highlighted">MS in Information Systems - Northeastern University (2023-2025)</summary>
+      <p>
+        Currently pursuing my Master's degree with focus on Data Science and AI.
+      </p>
+      <p>
+        Key courses:
+      </p>
+      <ul>
+        <li>Application Engineering and Development</li>
+        <li>Data Management and Database Design</li>
+        <li>Data Science Engineering Methods</li>
+        <li>Prompt Engineering and AI</li>
+        <li>Business Analysis & Information Engineering</li>
+        <li>Advances in Data Sciences and Architecture</li>
+      </ul>
+    </details>
+    <details class="details">
+      <summary class="summary summary-highlighted">BTech in Computer Science - Nirma University (2019-2023)</summary>
+      <p>
+        Bachelor's degree in Computer Science and Engineering.
+      </p>
+      <p>
+        Key courses:
+      </p>
+      <ul>
+        <li>Data Structures and Algorithms</li>
+        <li>Object Oriented Programming</li>
+        <li>Operating Systems</li>
+        <li>Machine Learning & Deep Learning</li>
+        <li>Natural Language Processing</li>
+        <li>Big Data Analytics</li>
+      </ul>
+    </details>
+  </section>
+
+  <section class="section single-section">
+    <right-now></right-now>
+  </section>
+
+  <section class="section single-section">
+    <p>I'm currently based in Boston, USA 🇺🇸</p>
+  </section>
+
+  <section class="section single-section">
+    <p>
+      My favorite way to relax is listening to lofi beats and reading a good sci-fi novel. 📚🎶
+    </p>
+  </section>
+
+  <section class="section single-section">
+    <h2 class="section-title">GitHub activity</h2>
+    <gh-contribs></gh-contribs>
+  </section>
+
+  <section class="section single-section">
+    <p class="big-number">42</p>
+    <p>The answer to life, the universe, and everything. And also the number of side projects I've started (but not necessarily finished).</p>
+  </section>
+
+  <section class="section single-section">
+    <h2 class="section-title">Favorite Game: FIFA</h2>
+
+    <div class="game-icon-row">
+      <img class="pixelated lg-icon" alt="FIFA logo" src="/fifa_logo.png" width="24" height="24" />
+    </div>
+
+    <p>
+      I absolutely love playing <strong>FIFA</strong>! Being a huge soccer fan, there's nothing better than setting up 
+      matches with friends, building my ultimate team, and trying to score those perfect goals. I probably spend way 
+      too much time tweaking team formations and practicing skill moves, but hey, that's half the fun!
+    </p>
+  </section>
+
+  <section class="section single-section">
+    <div class="game-icon-row">
+      <img class="pixelated lg-icon" alt="Valorant logo" src="./valorant_logo.png" style="
+          filter: invert(19%) sepia(35%) saturate(6830%) hue-rotate(344deg)
+            brightness(90%) contrast(85%);
+        " width="24" height="24" />
+    </div>
+    <p>
+      The game I spent the most time on Steam is currently
+      <strong>Valorant</strong>.
+    </p>
+  </section>
+
+  <section class="section single-section">
+    <p class="big-number fave-color" style="background-color: #800303">
+      #800303
+    </p>
+    <p>is my favourite colour<br />as of 12&nbsp;June&nbsp;2023 13:32</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Mini Games</h2>
+    <p>Take a break and play something fun! 🎮</p>
+    
+    <details class="details">
+      <summary class="summary summary-highlighted">Snake Game</summary>
+      <div class="game-container">
+        <canvas id="snakeCanvas" class="game-canvas" width="300" height="300"></canvas>
+        <p class="game-instructions">Use arrow keys to control the snake. Collect the food to grow!</p>
+        <button onclick="startSnakeGame()" class="game-button">Start Game</button>
+      </div>
+    </details>
+
+    <details class="details">
+      <summary class="summary summary-highlighted">Tic Tac Toe</summary>
+      <div class="game-container">
+        <div id="tictactoe" class="tictactoe-grid">
+          <div class="cell" onclick="makeMove(0)"></div>
+          <div class="cell" onclick="makeMove(1)"></div>
+          <div class="cell" onclick="makeMove(2)"></div>
+          <div class="cell" onclick="makeMove(3)"></div>
+          <div class="cell" onclick="makeMove(4)"></div>
+          <div class="cell" onclick="makeMove(5)"></div>
+          <div class="cell" onclick="makeMove(6)"></div>
+          <div class="cell" onclick="makeMove(7)"></div>
+          <div class="cell" onclick="makeMove(8)"></div>
+        </div>
+        <p id="ttt-status" class="game-status">X's turn</p>
+        <button onclick="resetTicTacToe()" class="game-button">Reset Game</button>
+      </div>
+    </details>
+
+    <details class="details">
+      <summary class="summary summary-highlighted">Memory Match</summary>
+      <div class="game-container">
+        <div id="memory-game" class="memory-grid"></div>
+        <p id="memory-status" class="game-status">Matches: 0</p>
+        <button onclick="startMemoryGame()" class="game-button">New Game</button>
+      </div>
+    </details>
+  </section>
+</div>
+
+<site-footer></site-footer>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(27em, 100%), 1fr));
+    margin: 0 -1px -1px 0;
+  }
+
+  .section {
+    margin: -1px 0 0 -1px;
+    padding: 18px;
+    border: solid 1px var(--card-clr);
+    font-family: var(--reading-font);
+    font-size: 15px;
+  }
+  .section-title {
+    margin: 0 0 18px;
+    font-family: var(--display-font);
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .section p {
+    margin: 12px 0;
+  }
+  .section p:first-child {
+    margin-top: 0;
+  }
+  .single-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details {
+    padding: 12px;
+  }
+  .summary {
+    margin-left: -12px;
+    font-family: var(--display-font);
+    font-weight: bold;
+    color: var(--text2-clr);
+    cursor: pointer;
+  }
+  .summary-highlighted {
+    color: var(--clr0-light);
+  }
+  .summary:hover {
+    color: var(--text-clr);
+  }
+
+  .img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  .img-small {
+    max-width: 200px;
+  }
+
+  .big-number {
+    margin: 36px;
+    font-size: 48px;
+    font-family: var(--display-font);
+    font-weight: bold;
+  }
+
+  .game-icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    width: 100%;
+  }
+
+  .fave-color {
+    padding: 0 0.25em;
+    border-radius: 6px;
+  }
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5em 0;
+    gap: 1.5em;
+  }
+
+  .game-canvas {
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    background: var(--card-clr);
+    border: 2px solid var(--clr0-dark);
+    transition: all 0.3s ease;
+  }
+
+  .game-canvas:hover {
+    border-color: var(--clr0-light);
+    box-shadow: 0 0 15px rgba(var(--clr0-rgb), 0.1);
+  }
+
+  .game-button {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-family: var(--display-font);
+    background: var(--clr0-dark);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .game-button:hover {
+    background: var(--clr0-light);
+    transform: translateY(-1px);
+  }
+
+  .game-status {
+    font-family: var(--display-font);
+    font-size: 1.1em;
+    color: var(--text2-clr);
+  }
+
+  .tictactoe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    width: 300px;
+    height: 300px;
+    background: var(--card-clr);
+    padding: 4px;
+    border-radius: 12px;
+    border: 2px solid var(--clr0-dark);
+  }
+
+  .cell {
+    background: var(--bg-clr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display-font);
+    font-size: 2.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+  }
+
+  .cell:hover {
+    background: var(--clr0-dark);
+    color: white;
+  }
+
+  .memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    width: 300px;
+    height: 300px;
+    background: var(--card-clr);
+    padding: 4px;
+    border-radius: 12px;
+    border: 2px solid var(--clr0-dark);
+  }
+
+  .memory-card {
+    background: var(--bg-clr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    transform-style: preserve-3d;
+  }
+
+  .memory-card:hover {
+    background: var(--clr0-dark);
+    color: white;
+  }
+
+  .memory-card.flipped {
+    transform: rotateY(180deg);
+    background: var(--clr0-light);
+    color: white;
+  }
+
+  .game-instructions {
+    font-size: 0.9em;
+    color: var(--text2-clr);
+    text-align: center;
+    max-width: 300px;
+    line-height: 1.4;
+  }
+</style>
+
+<script>
+  // Snake Game
+  function startSnakeGame() {
+    const canvas = document.getElementById('snakeCanvas');
+    const ctx = canvas.getContext('2d');
+    const gridSize = 15;
+    let snake = [{x: 10, y: 10}];
+    let food = {x: 15, y: 15};
+    let dx = 1;
+    let dy = 0;
+    let score = 0;
+    let gameLoop;
+    let gameStarted = false;
+
+    // Theme colors
+    const colors = {
+      snake: getComputedStyle(document.documentElement).getPropertyValue('--clr0-light').trim(),
+      food: '#ff6b6b',
+      background: getComputedStyle(document.documentElement).getPropertyValue('--bg-clr').trim()
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (!gameStarted) return;
+      switch(e.key) {
+        case 'ArrowUp': if(dy !== 1) { dx = 0; dy = -1; } break;
+        case 'ArrowDown': if(dy !== -1) { dx = 0; dy = 1; } break;
+        case 'ArrowLeft': if(dx !== 1) { dx = -1; dy = 0; } break;
+        case 'ArrowRight': if(dx !== -1) { dx = 1; dy = 0; } break;
+      }
+    });
+
+    function update() {
+      const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+      
+      if(head.x < 0 || head.x >= canvas.width/gridSize || 
+         head.y < 0 || head.y >= canvas.height/gridSize ||
+         snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+        clearInterval(gameLoop);
+        gameStarted = false;
+        ctx.fillStyle = 'rgba(0,0,0,0.5)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#fff';
+        ctx.font = '20px var(--display-font)';
+        ctx.textAlign = 'center';
+        ctx.fillText(`Game Over! Score: ${score}`, canvas.width/2, canvas.height/2);
+        return;
+      }
+
+      snake.unshift(head);
+      
+      if(head.x === food.x && head.y === food.y) {
+        score++;
+        food = {
+          x: Math.floor(Math.random() * (canvas.width/gridSize)),
+          y: Math.floor(Math.random() * (canvas.height/gridSize))
+        };
+      } else {
+        snake.pop();
+      }
+
+      // Draw
+      ctx.fillStyle = colors.background;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw food with glow
+      ctx.fillStyle = colors.food;
+      ctx.shadowColor = colors.food;
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc((food.x * gridSize) + gridSize/2, (food.y * gridSize) + gridSize/2, gridSize/2, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Reset shadow for snake
+      ctx.shadowBlur = 0;
+      
+      // Draw snake
+      ctx.fillStyle = colors.snake;
+      snake.forEach((segment, index) => {
+        const radius = index === 0 ? gridSize/2 : gridSize/2.5;
+        ctx.beginPath();
+        ctx.arc((segment.x * gridSize) + gridSize/2, (segment.y * gridSize) + gridSize/2, radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Draw score
+      ctx.fillStyle = '#fff';
+      ctx.font = '16px var(--display-font)';
+      ctx.textAlign = 'left';
+      ctx.fillText(`Score: ${score}`, 10, 20);
+    }
+
+    if(gameLoop) clearInterval(gameLoop);
+    gameStarted = true;
+    score = 0;
+    snake = [{x: 10, y: 10}];
+    food = {x: 15, y: 15};
+    dx = 1;
+    dy = 0;
+    gameLoop = setInterval(update, 100);
+  }
+
+  // Tic Tac Toe
+  let currentPlayer = 'X';
+  let board = Array(9).fill('');
+  
+  function makeMove(index) {
+    if(board[index] === '' && !checkWin()) {
+      board[index] = currentPlayer;
+      const cell = document.querySelectorAll('.cell')[index];
+      cell.textContent = currentPlayer;
+      cell.style.color = currentPlayer === 'X' ? 
+        getComputedStyle(document.documentElement).getPropertyValue('--clr0-light').trim() :
+        '#ff6b6b';
+      
+      if(checkWin()) {
+        document.getElementById('ttt-status').textContent = `${currentPlayer} wins!`;
+        return;
+      }
+      
+      if(board.every(cell => cell !== '')) {
+        document.getElementById('ttt-status').textContent = "It's a draw!";
+        return;
+      }
+      
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      document.getElementById('ttt-status').textContent = `${currentPlayer}'s turn`;
+    }
+  }
+
+  function checkWin() {
+    const lines = [
+      [0,1,2], [3,4,5], [6,7,8], // rows
+      [0,3,6], [1,4,7], [2,5,8], // columns
+      [0,4,8], [2,4,6] // diagonals
+    ];
+    
+    return lines.some(line => {
+      const [a,b,c] = line;
+      return board[a] && board[a] === board[b] && board[a] === board[c];
+    });
+  }
+
+  function resetTicTacToe() {
+    board = Array(9).fill('');
+    currentPlayer = 'X';
+    document.querySelectorAll('.cell').forEach(cell => {
+      cell.textContent = '';
+      cell.style.color = '';
+    });
+    document.getElementById('ttt-status').textContent = "X's turn";
+  }
+
+  // Memory Game
+  function startMemoryGame() {
+    const emojis = ['🎮', '🎲', '🎯', '🎨', '🎭', '🎪', '🎫', '🎪'];
+    const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+    const gameDiv = document.getElementById('memory-game');
+    let flipped = [];
+    let matched = new Set();
+    
+    gameDiv.innerHTML = cards.map((card, index) => `
+      <div class="memory-card" onclick="flipCard(${index})">
+        <div class="card-inner" data-value="${card}"></div>
+      </div>
+    `).join('');
+    
+    window.flipCard = function(index) {
+      const card = gameDiv.children[index];
+      if(flipped.length === 2 || flipped.includes(index) || matched.has(index)) return;
+      
+      card.children[0].textContent = cards[index];
+      card.classList.add('flipped');
+      flipped.push(index);
+      
+      if(flipped.length === 2) {
+        const [first, second] = flipped;
+        if(cards[first] === cards[second]) {
+          matched.add(first);
+          matched.add(second);
+          document.getElementById('memory-status').textContent = 
+            `Matches: ${matched.size/2}`;
+          flipped = [];
+          
+          if(matched.size === cards.length) {
+            setTimeout(() => {
+              document.getElementById('memory-status').textContent = 'You won! 🎉';
+            }, 500);
+          }
+        } else {
+          setTimeout(() => {
+            gameDiv.children[first].classList.remove('flipped');
+            gameDiv.children[second].classList.remove('flipped');
+            gameDiv.children[first].children[0].textContent = '';
+            gameDiv.children[second].children[0].textContent = '';
+            flipped = [];
+          }, 1000);
+        }
+      }
+    };
+  }
+</script>

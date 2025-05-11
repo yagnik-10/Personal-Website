@@ -1,0 +1,39 @@
+:root {
+  /* https://huemint.com/website-3/#palette=ffffff-dcdfde-14130e-343bea-e56c7a-fcd115 */
+  --color-orange: #fb7756;
+  --color-danger: #ce2b03;
+  --color-green: #8ef915;
+  --color-bg: #fffdfc;
+  --color-bg-darker: #feefeb;
+  --color-fg: #4c3c39;
+  --color-fg-secondary: #4c3c39b3;
+  --color-fg-tertiary: #4c3c3966;
+  --color-shadow: #03300511;
+
+  --size-xs: 6px;
+  --size-s: 12px;
+  --size-m: 24px;
+  --size-l: 36px;
+
+  --font-size-s: 13px;
+  --font-size-m: 16px;
+  --font-size-l: 24px;
+
+  --opacity-secondary: 0.7;
+  --opacity-tertiary: 0.4;
+  --opacity-placeholder: 0.3;
+
+  --shadow-l: 0 0 12px var(--color-shadow);
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: var(--font-size-m);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  accent-color: var(--color-orange);
+}
+
+* {
+  box-sizing: border-box;
+}

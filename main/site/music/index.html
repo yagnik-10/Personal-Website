@@ -1,0 +1,173 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/common.css" />
+<script defer src="/common.js"></script>
+<script defer src="./components.js"></script>
+
+<title>Music</title>
+
+<site-header iconsrc="/icons/sound.png"></site-header>
+
+<content-header>
+  <h1>The jukebox</h1>
+</content-header>
+
+<p class="intro-paragraph">Welcome to my music collection - featuring my favorite tracks.</p>
+
+<section>
+  <h2>My Spotify Favorites</h2>
+  <header>
+    <p>Here are some of my favorite tracks that I love listening to.</p>
+  </header>
+  <div class="spotify-grid">
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/7jXO2KuhobrDcEL4ifhhD1?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/6SL7KzIA96f0HiKjuv7tED?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/1Is8hGpkGMiePASAxBluxM?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/2u2QmdOex0MnbWuHmC7jcD?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/0zaoWwS8RpE3LSDdmkg8TC?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/5EcxDrQuoP14uKF2RFOy8A?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/3BUKSDaklrjVckSi8JUCmr?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/57Xjny5yNzAcsxnusKmAfA?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/3SAga35lAPYdjj3qyfEsCF?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<site-footer></site-footer>
+
+<style>
+  .intro-paragraph {
+    margin: 30px auto;
+    padding: 0 12px;
+    max-width: 600px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  body > section {
+    display: grid;
+    grid-template-columns: 200px 30px 1fr;
+    grid-template-rows: min-content 18px min-content;
+    grid-template-areas:
+      "title title title"
+      ". . ."
+      "meta . songs";
+    margin: 60px auto 90px;
+    padding: 0 12px;
+    max-width: 1200px;
+  }
+  @media (max-width: 800px) {
+    body > section {
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content 18px min-content 24px min-content;
+      grid-template-areas:
+        "title"
+        "."
+        "meta"
+        "."
+        "songs";
+    }
+  }
+
+  body > section > h2 {
+    grid-area: title;
+    font-size: 21px;
+    font-family: var(--display-font);
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  body > section > header {
+    grid-area: meta;
+    max-width: 470px;
+  }
+  body > section > header > :first-child {
+    margin-top: 0;
+  }
+  body > section > header > img {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .spotify-grid {
+    grid-area: songs;
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+</style>

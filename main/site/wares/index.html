@@ -1,0 +1,301 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/common.css" />
+<script defer src="/common.js"></script>
+
+<title>Wares</title>
+
+<site-header iconsrc="/icons/pot.png"></site-header>
+
+<content-header>
+  <h1>Check out my wares</h1>
+</content-header>
+
+<section class="lg-column-section">
+  <auto-grid style="--colwidth: 576px; --gap: 6">
+    <feature-card>
+      <a href="https://github.com/yagnik-10/nanokernel" target="_blank" rel="noopener">
+        <img src="/wares/wikawik/media/nanokernal.png" loading="lazy" width="1200" height="1200" style="--lqip:154330" />
+        <hgroup>
+          <h1>nanoKernal</h1>
+          <em>A lightweight operating system kernel</em>
+        </hgroup>
+        <p>
+          A lightweight operating system kernel showcasing core OS concepts. Implements memory allocation, process synchronization, and event systems. Built with modern C++ and CMake. Passion project exploring system-level programming.
+        </p>
+      </a>
+    </feature-card>
+
+    <feature-card>
+      <a href="https://github.com/yagnik-10/Distributed-Collaboration-Hub" target="_blank" rel="noopener">
+        <img src="/wares/dimensions/media/collab-hub.png" loading="lazy" width="800" height="800" style="--lqip:148188" />
+        <hgroup>
+          <h1>Distributed-Collaboration-Hub</h1>
+          <em>A full-stack microservices demo</em>
+        </hgroup>
+        <p>
+          A full-stack microservices demo for secure collaboration. Built with Python (FastAPI) and React. Features JWT authentication, role-based access, and a modern UI. Try user and admin flows, manage accounts and orders, and see real-time updates. Dockerized for easy local setup.
+        </p>
+      </a>
+    </feature-card>
+
+    <feature-card>
+      <a href="https://github.com/yagnik-10/ResumeFit" target="_blank" rel="noopener">
+        <img src="/wares/guhit-kudlit/resumefit.png" loading="lazy" width="1920" height="1080" style="--lqip:174819" />
+        <hgroup>
+          <h1>ResumeFit</h1>
+          <em>Tailor your resume for any job</em>
+        </hgroup>
+        <p>
+          A web app that helps you tailor your resume for any job. Instantly see your match rate, missing skills, and get actionable tips to improve your resume for specific job descriptions. Built with Flask and modern frontend tech. Uses a curated skills database for realistic feedback. Designed for job seekers who want to stand out.
+        </p>
+      </a>
+    </feature-card>
+
+    <!--
+    <feature-card>
+      <a href="/wares/photo-editor/">
+        <img src="/wares/photo-editor/img/canvaphotoeditor_1.jpg" loading="lazy" width="1638" height="1024" style="--lqip:175651" />
+        <hgroup>
+          <h1>Photo Editor</h1>
+          <em>2019 · Online image editing</em>
+        </hgroup>
+        <p>
+          A webapp for quick photo edits. Apply filters. Adjust contrast.
+          Sharpen, blur. Crop, rotate, and resize. Made with React, Canvas API,
+          and WebGL. Project at Canva.
+        </p>
+      </a>
+    </feature-card>
+    -->
+
+    <!-- Extra projects commented out
+    <feature-card>
+      <a href="/wares/miniforts/"> ... (MiniForts) ... </feature-card>
+      <feature-card> ... Hypertangram ... </feature-card>
+      <feature-card> ... Canva Pasko ... </feature-card>
+      <feature-card> ... Planet Defense ... </feature-card>
+      <feature-card> ... Dynaviz ... </feature-card>
+    -->
+  </auto-grid>
+</section>
+
+<section class="md-column-section">
+  <h2>More stuff</h2>
+  <div>
+    <project-item>
+      <a href="https://github.com/yagnik-10?tab=repositories" target="_blank">
+        <img src="/icons/github.png" alt="GitHub" loading="lazy" width="400" height="400" style="--lqip:0" />
+        <strong>GitHub profile</strong>
+        <span>Dive into 30+ tiny experiments, weekend hacks, and WIP prototypes</span>
+        <em>open&nbsp;GitHub</em>
+      </a>
+    </project-item>
+  </div>
+</section>
+
+<site-footer></site-footer>
+
+<style>
+  project-item {
+    display: block;
+    position: relative;
+    height: 42px;
+    border-bottom: solid 1px var(--card-clr);
+    font-size: 15px;
+    text-decoration: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    color: inherit;
+
+    &:first-child,
+    &:first-child img {
+      border-top-left-radius: 18px;
+    }
+    &:last-child,
+    &:last-child img {
+      border-bottom-left-radius: 18px;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 90px;
+      height: 100%;
+      background-color: var(--clr0);
+      mix-blend-mode: darken;
+    }
+    img {
+      flex: 0 0 auto;
+      width: 90px;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      transition: all 0.1s var(--ease);
+      transition-property: border-radius, height;
+      object-fit: cover;
+    }
+
+    strong {
+      flex: 0 0 auto;
+      margin-left: 18px;
+      font-family: var(--display-font);
+      font-weight: bold;
+      color: var(--text-clr);
+    }
+
+    time {
+      display: flex;
+      flex: 0 0 auto;
+      color: var(--text2-clr);
+    }
+    time::before {
+      content: "·";
+      margin: 0 6px;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      color: var(--text2-clr);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    span::before {
+      content: "·";
+      margin: 0 6px;
+    }
+
+    em {
+      flex: 0 0 auto;
+      margin: 0 18px 0 24px;
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--text2-clr);
+    }
+    em::after {
+      content: "→";
+      display: inline-block;
+    }
+    &:has([target="_blank"]) em::after {
+      content: "↗";
+      display: inline-block;
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 1200px) {
+      height: 72px;
+
+      a {
+        display: grid;
+        grid-template-columns: 90px min-content 1fr min-content;
+        grid-template-rows: 12px 1fr 1fr 12px;
+        grid-template-areas:
+          "img _ _ _"
+          "img title posttitle link"
+          "img content content content"
+          "img __ __ __";
+      }
+      img {
+        grid-area: img;
+        align-self: center;
+      }
+      strong {
+        grid-area: title;
+        margin-left: 12px;
+      }
+      time {
+        grid-area: posttitle;
+      }
+      span {
+        grid-area: content;
+        margin-left: 12px;
+      }
+      span::before {
+        display: none;
+      }
+      em {
+        grid-area: link;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      height: auto;
+
+      a {
+        height: auto;
+        display: grid;
+        grid-template-columns: 90px 12px 1fr;
+        grid-template-rows: 12px min-content min-content min-content 12px;
+        grid-template-areas:
+          "img _ __"
+          "img _ title"
+          "img _ content"
+          "img _ link"
+          "img _ ___";
+      }
+      strong {
+        margin: 0 0 6px;
+      }
+      span {
+        margin: 0;
+        white-space: normal;
+      }
+      time {
+        display: none;
+      }
+      em {
+        margin: 0;
+        text-align: right;
+        text-decoration: underline;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--card-clr);
+
+        &::before {
+          background-color: #fff;
+        }
+        span {
+          border-radius: 6px;
+          white-space: normal;
+          background: var(--card-clr);
+          overflow: visible;
+        }
+        em {
+          color: var(--clr0-light);
+          text-decoration: underline;
+        }
+
+        @media not (max-width: 1200px) {
+          overflow: visible;
+          z-index: 1;
+
+          img {
+            height: 90px;
+            border-radius: 18px;
+          }
+        }
+      }
+    }
+  }
+</style>
