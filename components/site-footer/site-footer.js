@@ -44,7 +44,7 @@ class SiteFooter extends HTMLElement {
           <a href="https://github.com/yagnik-10" target="_blank" rel="noopener">
             <img class="invert pixelated" src="/icons/github.png" alt="GitHub" width="16" height="16" />
           </a>
-          <a href="https://linkedin.com/in/yagnikpavagadhi" target="_blank" rel="noopener">
+          <a href="https://www.linkedin.com/in/yagnik-pavagadhi/" target="_blank" rel="noopener">
             <img class="invert pixelated" src="/icons/linkedin.png" alt="LinkedIn" width="16" height="16" />
           </a>
         </div>
